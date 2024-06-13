@@ -272,4 +272,13 @@ footer {
     header nav ul li {
         margin: 5px 0;
     }
+
+    .about-text {
+        font-size: 8px;
+    }
+
+    .about-name {
+        font-size: 30px;
+        padding-top: 165px;
+    }
 }
