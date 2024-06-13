@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WineWorld - 首頁</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <script>
+        function toggleMenu() {
+        var navMenu = document.getElementById('nav-menu');
+        if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+        } else {
+            navMenu.style.display = 'flex';
+        }
+    }
+    </script>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">WineWorld</a></h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <ul class="drop-down-menu">
+                        <li><a href="products.html">產品</a>
+                            <ul>
+                                <li><a href="products.html#redwine">紅酒</a>
+                                </li>
+                                <li><a href="products.html#whitewine">白酒</a>
+                                </li>
+                                <li><a href="products.html#pinkwine">粉紅酒</a>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li><a href="about.html">關於我們</a></li>
+                    <li><a href="contact.html">聯繫我們</a></li>
+                    <li><a href="login.html">登入</a></li>
+                    <li><a href="cart.html">購物車</a></li>
+                    <li><a href="member.html">會員</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get">
+                <input type="text" name="q" placeholder="搜索">
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const indicators = document.querySelectorAll('.indicator');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                const slideWidth = slides[0].clientWidth;
+                const container = document.querySelector('.carousel-container');
+                container.style.transform = `translateX(-${index * slideWidth}px)`;
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+                showSlide(currentSlide);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+                showSlide(currentSlide);
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, i) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            showSlide(currentSlide);
+            startAutoSlide();
+        });
+    </script>
+    
+    <main class="main">
+        <section class="hero">
+            <div>
+                <h2>歡迎來到 WineWorld</h2>
+                <p>探索我們的高品質葡萄酒系列</p>
+                <a href="products.html" class="btn">立即購買</a>
+            </div>
+        </section>
+    
+        <section class="carousel">
+            <div>
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <a href="products.html"><img src="images/ad1.jpg" alt="Ad 1"></a>
+                    </div>
+                    <div class="carousel-slide">
+                        <a href="products.html"><img src="images/ad2.jpg" alt="Ad 2"></a>
+                    </div>
+                    <div class="carousel-slide">
+                        <a href="products.html"><img src="images/ad3.webp" alt="Ad 3" style="margin-top: 50px;"></a>
+                    </div>
+                </div>
+                <button class="carousel-prev">↩︎</button>
+                <button class="carousel-next">↪︎</button>
+                <div class="carousel-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </section>
+    
+        <section class="featured-products">
+            <div>
+                <h3>特色產品</h3>
+                <div class="product-grid">
+                    <div class="product">
+                        <img src="images/redwine1.webp" alt="Wine 1">
+                        <h4>佩阿曼多紅酒</h4>
+                        <p>價格：$3000</p>
+                        <a href="product.html?id=1" class="btn">查看詳情</a>
+                    </div>
+                    <div class="product">
+                        <img src="images/whitewine1.webp" alt="Wine 2">
+                        <h4>普依富塞村莊白酒</h4>
+                        <p>價格：$2000</p>
+                        <a href="product.html?id=2" class="btn">查看詳情</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div>
+            <p>&copy; 2024 WineWorld. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

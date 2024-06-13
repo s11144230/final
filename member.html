@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WineWorld - 會員資料</title>
+    <link rel="stylesheet" href="css/member.css">
+</head>
+<body>
+    <script>
+        function toggleMenu() {
+        var navMenu = document.getElementById('nav-menu');
+        if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+        } else {
+            navMenu.style.display = 'flex';
+        }
+    }
+    </script>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">WineWorld</a></h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <ul class="drop-down-menu">
+                        <li><a href="products.html">產品</a>
+                            <ul>
+                                <li><a href="products.html#redwine">紅酒</a>
+                                </li>
+                                <li><a href="products.html#whitewine">白酒</a>
+                                </li>
+                                <li><a href="products.html#pinkwine">粉紅酒</a>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li><a href="about.html">關於我們</a></li>
+                    <li><a href="contact.html">聯繫我們</a></li>
+                    <li><a href="login.html">登入</a></li>
+                    <li><a href="cart.html">購物車</a></li>
+                    <li><a href="member.html">會員</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get">
+                <input type="text" name="q" placeholder="搜索">
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="section">
+            <h2>個人基本資料編輯</h2>
+            <form action="" id="personal-info-form" method="post">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">性別</label>
+                    <input type="text" id="gender" name="gender" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">生日</label>
+                    <input type="date" name="birthday" id="birthday">
+                </div>
+                <div class="form-group">
+                    <label for="email">電子郵件</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">電話</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">地址</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">保存</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>消費紀錄</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>項目</th>
+                        <th>金額</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-06-01</td>
+                        <td>佩阿曼多紅酒</td>
+                        <td>$3000</td>
+                    </tr>
+                    <tr>
+                        <td>2023-06-05</td>
+                        <td>普依富塞村莊白酒</td>
+                        <td>$2000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>歷史評論與評分紀錄</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>商品</th>
+                        <th>評論</th>
+                        <th>評分</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-06-02</td>
+                        <td>佩阿曼多紅酒</td>
+                        <td>品質不錯，但價格偏高。</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2023-06-06</td>
+                        <td>普依富塞村莊白酒</td>
+                        <td>非常好喝，推薦！</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy; 2024 WineWorld. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

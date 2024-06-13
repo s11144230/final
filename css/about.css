@@ -1,0 +1,275 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header form {
+    display: flex;
+}
+
+header form input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+header form button {
+    padding: 5px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+ul.drop-down-menu li {
+    position: relative;
+}
+
+ul.drop-down-menu>li:last-child {
+    border-right: none;
+}
+
+ul.drop-down-menu a {
+    background-color: #333;
+    color: white;
+    display: block;
+    padding: 0;
+    text-decoration: none;
+}
+
+ul.drop-down-menu a:hover {
+    /* 滑鼠滑入按鈕變色*/
+    background-color: white;
+    color: black;
+}
+
+ul.drop-down-menu li:hover>a {
+    /* 滑鼠移入次選單上層按鈕保持變色*/
+    background-color: white;
+    color: black;
+}
+
+ul.drop-down-menu ul {
+    position: absolute;
+    z-index: 99;
+    left: -10px;
+    top: 100%;
+    min-width: 160px;
+}
+
+ul.drop-down-menu ul li:last-child {
+    border-bottom: none;
+}
+
+ul.drop-down-menu ul {
+    /*隱藏次選單*/
+    display: none;
+}
+
+ul.drop-down-menu li:hover>ul {
+    /* 滑鼠滑入展開次選單*/
+    display: block;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 100px 20px;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-item {
+    position: relative;
+    width: calc(33.333% - 20px);
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.about-name {
+    font-size: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    padding-top: 300px;
+    box-sizing: border-box;
+}
+
+.about-personal {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+.about-item .about-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.about-item:hover .about-text {
+    opacity: 1;
+}
+
+.about-contact {
+    width: 50px;
+    height: 50px;
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .about-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px 10px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    header form {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    header form input,
+    header form button {
+        width: auto;
+        margin: 5px 0;
+    }
+
+    .main {
+        padding: 80px 20px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+}

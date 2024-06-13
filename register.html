@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WineWorld - 註冊</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <script>
+        function toggleMenu() {
+        var navMenu = document.getElementById('nav-menu');
+        if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+        } else {
+            navMenu.style.display = 'flex';
+        }
+    }
+    </script>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">WineWorld</a></h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <ul class="drop-down-menu">
+                        <li><a href="products.html">產品</a>
+                            <ul>
+                                <li><a href="products.html#redwine">紅酒</a>
+                                </li>
+                                <li><a href="products.html#whitewine">白酒</a>
+                                </li>
+                                <li><a href="products.html#pinkwine">粉紅酒</a>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li><a href="about.html">關於我們</a></li>
+                    <li><a href="contact.html">聯繫我們</a></li>
+                    <li><a href="login.html">登入</a></li>
+                    <li><a href="cart.html">購物車</a></li>
+                    <li><a href="member.html">會員</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get">
+                <input type="text" name="q" placeholder="搜索">
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="main">
+        <div>
+            <section class="register-form">
+                <h2>註冊</h2>
+                <form action="dashboard.html" method="post">
+                    <label for="name">姓名：</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">帳號：</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">密碼：</label>
+                    <input type="password" id="password" name="password" required>
+                    <label for="confirm-password">確認密碼：</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <button type="submit" class="btn">註冊</button>
+                </form>
+                <p>已有帳號？ <a href="login.html">登入</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy; 2024 WineWorld. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

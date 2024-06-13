@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WineWorld - 產品詳情</title>
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<body>
+    <script>
+        function toggleMenu() {
+        var navMenu = document.getElementById('nav-menu');
+        if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+        } else {
+            navMenu.style.display = 'flex';
+        }
+    }
+    </script>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">WineWorld</a></h1>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <ul class="drop-down-menu">
+                        <li><a href="products.html">產品</a>
+                            <ul>
+                                <li><a href="products.html#redwine">紅酒</a>
+                                </li>
+                                <li><a href="products.html#whitewine">白酒</a>
+                                </li>
+                                <li><a href="products.html#pinkwine">粉紅酒</a>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li><a href="about.html">關於我們</a></li>
+                    <li><a href="contact.html">聯繫我們</a></li>
+                    <li><a href="login.html">登入</a></li>
+                    <li><a href="cart.html">購物車</a></li>
+                    <li><a href="member.html">會員</a></li>
+                </ul>
+            </nav>
+            <form action="search.html" method="get">
+                <input type="text" name="q" placeholder="搜索">
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="main">
+        <div>
+            <div class="product-details">
+                <a href="product.html"><img src="images/redwine1.webp" alt="Wine 1"></a>
+                <div class="details">
+                    <h2>佩阿曼多紅酒</h2>
+                    <p>產地：法國</p>
+                    <p>年份：2018</p>
+                    <p>酒精度：13.5%</p>
+                    <p>價格：$3000</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>&copy; 2024 WineWorld. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
