@@ -158,7 +158,7 @@ ul.drop-down-menu li:hover>ul {
     color: white;
     text-align: center;
     padding: 20px;
-    padding-top: 300px;
+    padding-top: 80%;
     box-sizing: border-box;
 }
 
@@ -279,6 +279,5 @@ footer {
 
     .about-name {
         font-size: 30px;
-        padding-top: 165px;
     }
 }
