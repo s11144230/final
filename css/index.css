@@ -302,28 +302,6 @@ footer img {
     .hero-item {
         width: calc(50% - 20px);
     }
-}
-
-@media screen and (max-width: 1200px) {
-    .carousel-item {
-        width: calc(50% - 20px);
-    }
-
-    .indicator-item {
-        width: calc(50% - 20px);
-    }
-
-    .product-item {
-        width: calc(50% - 20px);
-    }
-
-    .featured-products-item {
-        width: calc(50% - 20px);
-    }
-
-    .hero-item {
-        width: calc(50% - 20px);
-    }
 
     footer img {
         width: calc(100%);
@@ -377,6 +355,12 @@ footer img {
     .main {
         padding: 80px 20px 20px 20px;
     }
+
+    .welcome {
+        margin-left: auto;
+        height: auto;
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -391,5 +375,11 @@ footer img {
 
     header nav ul li {
         margin: 5px 0;
+    }
+
+    .welcome {
+        margin-left: auto;
+        height: auto;
+        width: auto;
     }
 }
