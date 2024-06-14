@@ -135,8 +135,7 @@ ul.drop-down-menu li:hover>ul {
     text-align: center;
     color: white;
     padding: 100px 20px;
-    background: radial-gradient(ellipse, #333, gray);
-    border-radius: 50%;
+    background-size: cover;
 }
 
 .hero .btn {
@@ -146,6 +145,14 @@ ul.drop-down-menu li:hover>ul {
     text-decoration: none;
     display: inline-block;
     margin-top: 10px;
+}
+
+.welcome {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 500px;
+    height: 120px;
+    padding-top: 5px;
+    margin-left: 27%;
 }
 
 .featured-products {
