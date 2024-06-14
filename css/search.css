@@ -175,6 +175,12 @@ footer {
     width: 100%;
 }
 
+footer img {
+    border-bottom: 1px solid white;
+    width: 1200px;
+    padding-bottom: 20px;
+}
+
 @media screen and (max-width: 1200px) {
     .product-details-item {
         width: calc(50% - 20px);
@@ -190,6 +196,32 @@ footer {
 
     .star-item {
         width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel-item {
+        width: calc(50% - 20px);
+    }
+
+    .indicator-item {
+        width: calc(50% - 20px);
+    }
+
+    .product-item {
+        width: calc(50% - 20px);
+    }
+
+    .featured-products-item {
+        width: calc(50% - 20px);
+    }
+
+    .hero-item {
+        width: calc(50% - 20px);
+    }
+
+    footer img {
+        width: calc(100%);
     }
 }
 
