@@ -53,7 +53,7 @@
         <div>
             <section class="checkout">
                 <h2>結帳</h2>
-                <form action="order-confirmation.html" method="post">
+                <form action="jsp&sql/order-confirmation.jsp" method="post">
                     <label for="fullname">全名：</label>
                     <input type="text" id="fullname" name="fullname" required>
                     <label for="address">地址：</label>
@@ -77,7 +77,8 @@
                         <option value="LinePay">LinePay</option>
                         <option value="貨到付款">貨到付款</option>
                     </select>
-                    <button type="submit" class="btn">提交訂單</button>
+                    <input type="hidden" id="user_id" name="user_id" value="<%= session.getAttribute("user_id") %>
+                    <button type="submit" class="btn" action="jsp&sql/order-confirmation.jsp">提交訂單</button>
                 </form>
             </section>
         </div>

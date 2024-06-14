@@ -10,12 +10,62 @@
     <script>
         function toggleMenu() {
         var navMenu = document.getElementById('nav-menu');
-        if (navMenu.style.display === 'flex') {
-            navMenu.style.display = 'none';
-        } else {
-            navMenu.style.display = 'flex';
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } 
+            else {
+                navMenu.style.display = 'flex';
+            }
         }
-    }
+
+        function loadCart() {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let cartItems = document.getElementById('cart-items');
+                let totalPrice = 0;
+
+                cartItems.innerHTML = '';
+                cart.forEach(item => {
+                    let itemTotal = item.price * item.quantity;
+                    totalPrice += itemTotal;
+                    cartItems.innerHTML += `
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>
+                                <button onclick="updateQuantity('${item.name}', -1)">-</button>
+                                ${item.quantity}
+                                <button onclick="updateQuantity('${item.name}', 1)">+</button>
+                            </td>
+                            <td>$${item.price}</td>
+                            <td>$${itemTotal}</td>
+                            <td><button onclick="removeItem('${item.name}')" class="btn">移除</button></td>
+                        </tr>
+                    `;
+                });
+
+                document.getElementById('total-price').textContent = '總計：$' + totalPrice;
+            }
+
+            function updateQuantity(productName, change) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let product = cart.find(item => item.name === productName);
+                if (product) {
+                    product.quantity += change;
+                    if (product.quantity <= 0) {
+                        cart = cart.filter(item => item.name !== productName);
+                    }
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    loadCart();
+                }
+            }
+
+            function removeItem(productName) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart = cart.filter(item => item.name !== productName);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+
+            document.addEventListener('DOMContentLoaded', loadCart);
     </script>
     <header>
         <div class="container">
@@ -50,35 +100,27 @@
     </header>
 
     <main class="main">
-        <form action="" method="post">
-            <section class="cart">
-                <h2>購物車</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>產品</th>
-                            <th>數量</th>
-                            <th>價格</th>
-                            <th>總計</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>佩阿曼多紅酒</td>
-                            <td>1</td>
-                            <td>$3000</td>
-                            <td>$3000</td>
-                            <td><button class="btn">移除</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="total">
-                    <p>總計：$3000</p>
-                    <a href="checkout.html" class="btn">結帳</a>
-                </div>
-            </section>
-        </div>
+        <section class="cart">
+            <h2>購物車</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>產品</th>
+                        <th>數量</th>
+                        <th>價格</th>
+                        <th>總計</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- 動態生成購物車項目 -->
+                </tbody>
+            </table>
+            <div class="total">
+                <p id="total-price">總計：$0</p>
+                <a href="checkout.html" class="btn">結帳</a>
+            </div>
+        </section>
     </main>
     
     <footer>

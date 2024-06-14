@@ -16,6 +16,23 @@
             navMenu.style.display = 'flex';
         }
     }
+
+    $(document).ready(function() {
+            $.ajax({
+                url: 'jsp&sql/loadInventory.jsp',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    data.forEach(function(product) {
+                        var productDiv = $('div[data-name="' + product.name + '"]');
+                        productDiv.find('.inventory').text('庫存量：' + product.quantity);
+                    });
+                },
+                error: function(error) {
+                    console.error('Error loading inventory data:', error);
+                }
+            });
+        });
     </script>
     <header>
         <div class="container">
@@ -58,57 +75,57 @@
                     <img src="images/redwine1.webp" alt="Wine 1">
                     <h4>佩阿曼多紅酒</h4>
                     <p>價格：$3000</p>
-                    <a href="product.html?id=1" class="btn">查看詳情</a>
+                    <a href="product.html" class="btn">查看詳情</a>
                 </div>
                 <div class="product">
                     <img src="images/redwine2.webp" alt="Wine 2">
                     <h4>智利特級紅酒</h4>
                     <p>價格：$1000</p>
-                    <a href="product.html?id=2" class="btn">查看詳情</a>
+                    <a href="product2.html" class="btn">查看詳情</a>
                 </div>
                 <div class="product">
                     <img src="images/redwine3.webp" alt="Wine 3">
                     <h4>卡本內蘇維翁紅酒</h4>
                     <p>價格：$6000</p>
-                    <a href="product.html?id=3" class="btn">查看詳情</a>
+                    <a href="product3.html" class="btn">查看詳情</a>
                 </div>
                 <a name="whitewine"><h3>白酒</h3></a>
                 <div class="product">
                     <img src="images/whitewine1.webp" alt="Wine 4">
                     <h4>普依富塞村莊白酒</h4>
                     <p>價格：$2000</p>
-                    <a href="product.html?id=4" class="btn">查看詳情</a>
+                    <a href="product4.html" class="btn">查看詳情</a>
                 </div>
                 <div class="product">
                     <img src="images/whitewine2.webp" alt="Wine 5">
                     <h4>夏多內白酒</h4>
                     <p>價格：$1800</p>
-                    <a href="product.html?id=5" class="btn">查看詳情</a>
+                    <a href="product5.html" class="btn">查看詳情</a>
                 </div>
                 <div class="product">
                     <img src="images/whitewine3.webp" alt="Wine 6">
                     <h4>木杉白酒</h4>
                     <p>價格：$3500</p>
-                    <a href="product.html?id=6" class="btn">查看詳情</a>
+                    <a href="product6.html" class="btn">查看詳情</a>
                 </div>
                 <a name="pinkwine"><h3 style="height: 50px;">粉紅酒</h3></a>
                 <div class="product">
                     <img src="images/pinkwine1.webp" alt="Wine 7">
                     <h4>親親粉紅酒</h4>
                     <p>價格：$1500</p>
-                    <a href="product.html?id=7" class="btn">查看詳情</a>
+                    <a href="product7.html" class="btn">查看詳情</a>
                 </div>
                 <div class="product">
                     <img src="images/pinkwine2.webp" alt="Wine 8">
                     <h4>花漾派對粉紅酒</h4>
                     <p>價格：$1000</p>
-                    <a href="product.html?id=8" class="btn">查看詳情</a>
+                    <a href="product8.html" class="btn">查看詳情</a>
                 </div>
                 <div class="product">
                     <img src="images/pinkwine3.webp" alt="Wine 9">
                     <h4>普羅旺斯粉紅酒</h4>
                     <p>價格：$2000</p>
-                    <a href="product.html?id=9" class="btn">查看詳情</a>
+                    <a href="product9.html" class="btn">查看詳情</a>
                 </div>
             </div>
         </div>
