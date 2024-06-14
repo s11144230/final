@@ -136,6 +136,7 @@ ul.drop-down-menu li:hover>ul {
     color: white;
     padding: 100px 20px;
     background-size: cover;
+    margin: 1.5% 0;
 }
 
 .hero .btn {
