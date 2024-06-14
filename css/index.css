@@ -208,6 +208,7 @@ ul.drop-down-menu li:hover>ul {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    margin-bottom: 0.7%;
 }
 
 .carousel-container {
@@ -218,6 +219,7 @@ ul.drop-down-menu li:hover>ul {
 .carousel-slide {
     min-width: 100%;
     box-sizing: border-box;
+    margin-bottom: 3%;
 }
 
 .carousel-slide img {
