@@ -113,6 +113,19 @@ ul.drop-down-menu ul {
     min-width: 160px;
 }
 
+ul.drop-down-menu ul a {
+    z-index: 100;
+    background-color: white;
+    color: black;
+    padding: 5px 0;
+}
+
+ul.drop-down-menu ul a:hover {
+    z-index: 100;
+    background-color: #333;
+    color: white;
+}
+
 ul.drop-down-menu ul li:last-child {
     border-bottom: none;
 }
@@ -145,6 +158,8 @@ ul.drop-down-menu li:hover>ul {
 
 .product-details .details {
     flex: 1;
+    font-size: xx-large;
+    margin-left: 10%;
 }
 
 .product-details .details h2 {
